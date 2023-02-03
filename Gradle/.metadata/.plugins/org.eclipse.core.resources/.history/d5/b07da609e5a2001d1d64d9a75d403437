@@ -1,0 +1,20 @@
+package n2exercici1;
+
+public class ImplementsPagament implements Pagament{
+
+	@Override
+	public void targeta() {
+		System.out.println("Pagament amb targeta");		
+	}
+
+	@Override
+	public void paypal() {
+		System.out.println("Pagament amb paypal");		
+	}
+
+	@Override
+	public void compte() {
+		System.out.println("Pagament amb compte bancari");		
+	}
+
+}

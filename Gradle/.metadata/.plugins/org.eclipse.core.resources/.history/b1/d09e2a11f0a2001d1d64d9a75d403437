@@ -1,0 +1,9 @@
+package n2exercici1;
+
+public class n2exercici1 {
+
+	public static void main(String[] args) {
+		 Sabateria sabateria = new Sabateria();
+	}
+
+}

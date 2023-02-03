@@ -1,0 +1,56 @@
+package S3_02;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Agent implements Observable{
+		private List<Observer> observers;
+		
+		public Agent(){
+			observers = new ArrayList<Observer>();
+		}
+		
+		private String nomIndexBorsa;
+		private int variacio;	
+		
+		@Override
+		public void registrarObserver(Observer observer) {
+			if(observer != null){
+				this.observers.add(observer);
+			}
+		}
+
+		@Override
+		public void notificarObservers() {
+			Iterator<Observer> it = observers.iterator();
+			while(it.hasNext()){
+				Observer observer = it.next();
+				observer.actualitza(this);
+			}
+		}
+
+		@Override
+		public void esborrarObserver(Observer observer) {
+			if(observer != null){
+				this.observers.remove(observer);
+			}
+		}
+		
+		public int getVariacio(){
+			return variacio;
+		}
+		
+		public void actualitzarValorAgent(int valorActualitzat){
+			this.variacio = valorActualitzat;
+			this.notificarObservers();
+		}		
+	
+		public void setNomIndexBorsa() {
+			this.nomIndexBorsa=nomIndexBorsa;
+		}
+		
+		public String getNomIndexBorsa() {
+			return nomIndexBorsa;
+		}
+}

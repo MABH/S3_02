@@ -1,0 +1,14 @@
+package n2exercici1;
+
+public class n2exercici1 {
+
+	public static void main(String[] args) {
+		 Pagament targetaPagament = new PagamentTargeta();
+		 Pagament payPalPagament = new PagamentPaypal();
+		 Pagament comptePagament = new PagamentCompte();
+		 
+		 Sabateria sabeteria = new Sabateria();
+		 sabateria.registrar
+	}
+
+}

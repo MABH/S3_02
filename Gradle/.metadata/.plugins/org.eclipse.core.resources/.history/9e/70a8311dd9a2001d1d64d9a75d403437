@@ -1,0 +1,6 @@
+package S3_02;
+
+public interface Observer {
+	public void actualitza(Agent agent);
+
+}

@@ -1,0 +1,11 @@
+package S3_02;
+
+public class Agencia1 implements Observer{
+	@Override
+	public void actualitza(Agent agent) {
+		if (agent.getVariacio()>1)
+			System.out.println("Agencia1 - EL IBEX35 puja");
+		else
+			System.out.println("Agencia1 - El IBEX35 baixa");
+	}
+}

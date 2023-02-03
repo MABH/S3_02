@@ -1,0 +1,10 @@
+package S3_02;
+
+public class Agencia1 implements Observer{
+
+	@Override
+	public void actualitzar(Agent agent) {
+		System.out.println("Agent - El preu de "+valor.getNomValor()+" a cambiat:"+valor.getPreuValor());
+		
+	}
+}

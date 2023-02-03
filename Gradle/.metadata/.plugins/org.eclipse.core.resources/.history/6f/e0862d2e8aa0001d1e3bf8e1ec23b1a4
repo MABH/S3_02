@@ -1,0 +1,56 @@
+package S3_02;
+
+	import java.util.ArrayList;
+	import java.util.Iterator;
+	import java.util.List;
+	
+	public abstract class Agencia implements Observable{
+		private List<Observer> observers;
+		
+		public Agencia(){
+			observers = new ArrayList<Observer>();
+		}
+		
+		private String nom;
+		private int preu;
+		
+		public String getNomAgencia(){
+			return nom;
+		}
+
+		@Override
+		public void registrarObserver(Observer observer) {
+			if(observer != null){
+				this.observers.add(observer);
+			}
+		}
+
+		@Override
+		public void notificarObservers() {
+			Iterator<Observer> it = observers.iterator();
+			while(it.hasNext()){
+				Observer observer = it.next();
+				observer.update(this);
+			}
+		}
+
+		@Override
+		public void esborrarObserver(Observer observer) {
+			if(observer != null){
+				this.observers.remove(observer);
+			}
+		}
+		
+		public int getStockPrice(){
+			return preu;
+		}
+		
+		public void updateStockPrice(int updatedPrice){
+			this.preu = updatedPrice;
+			this.notificarObservers();
+		}
+		
+		public void setName(String stockName){
+			this.nom = stockName;
+		}
+}

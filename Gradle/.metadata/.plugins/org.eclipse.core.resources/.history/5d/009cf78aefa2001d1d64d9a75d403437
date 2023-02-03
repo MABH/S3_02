@@ -1,0 +1,16 @@
+package n2exercici1;
+
+public class Sabateria {
+	Pagament pagament;
+	
+	 public void registrarPagament(Pagament pagament) {
+	        this.pagament = pagament;
+	    }
+
+	    public void pagament() {
+	        // presume some event happened here...
+	        pagament.targeta();
+	        pagament.paypal();
+	        pagament.compte();
+	    }
+}

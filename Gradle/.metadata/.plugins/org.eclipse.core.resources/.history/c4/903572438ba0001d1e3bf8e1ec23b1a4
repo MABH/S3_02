@@ -1,0 +1,10 @@
+package S3_02;
+
+public class Observador implements Observer{
+		
+
+	@Override
+	public void actualitzar(Valor valor) {
+		System.out.println("El precio de  "valor.geNomValor()+"ha cambiadod:"valor.gePreuValor());
+	}
+}

@@ -1,0 +1,12 @@
+package n3exercici1;
+
+public class n3exercici1 {
+
+	public static void main(String[] args) {
+		Preus preus = new Preus(new ConvertidorDolars(), new ConvertidorYens(), new ConvertidorYuan(), new ConvertidorLliura());
+		
+		System.out.println("Preu llauna de coca-cola: 0.8€");
+		preus.veureConversions(0.8f);
+	}
+
+}

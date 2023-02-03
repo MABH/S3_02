@@ -1,0 +1,75 @@
+package S3_02;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Agent implements Observable{
+		private List<Observer> observers;		
+		private String nomIndexBorsa1, nomIndexBorsa2;
+		private int variacio1, variacio2;	
+		
+		public Agent(){
+			observers = new ArrayList<Observer>();
+			System.out.println("Agent constructor");
+		}
+		
+		@Override
+		public void registrarObserver(Observer observer) {
+			if(observer != null){
+				System.out.println("Agent registrarObserver != null");
+				this.observers.add(observer);
+			}
+		}
+
+		@Override
+		public void notificarObservers() {
+			Iterator<Observer> it = observers.iterator();
+			while(it.hasNext()){
+				Observer observer = it.next();
+				observer.actualitza(this);
+				System.out.println("Agent notificarObservers -> actualitza this");
+			}
+		}
+
+		@Override
+		public void esborrarObserver(Observer observer) {
+			if(observer != null){
+				this.observers.remove(observer);
+				System.out.println("Agent esborrarObserver != null");
+			}
+		}
+		
+		public int getVariacio1(){
+			System.out.println("Agent getVariacio1: "+ variacio1);
+			return variacio1;
+		}
+		
+		public int getVariacio2(){
+			System.out.println("Agent getVariacio2: "+ variacio2);
+			return variacio2;
+		}
+		
+		public void actualitzarValorsAgent(int valor1Actualitzat, valor1Actualitzat2){
+			System.out.println("Agent actualitzarValorAgent: "+ valorActualitzat1+" - "+valor1Actualitzat2);
+			this.variacio1 = valorActualitzat1;
+			this.variacio2 = valorActualitzat2;
+			this.notificarObservers();
+		}		
+	
+		public void setNomIndexBorsa(String nomIndexBorsa1, String nomIndexBorsa2) {
+			this.nomIndexBorsa1=nomIndexBorsa1;
+			this.nomIndexBorsa2=nomIndexBorsa2;
+			System.out.println("Agent setNomIndexBorsa: ");
+		}
+		
+		public String getNomIndexBorsa1() {
+			System.out.println("Agent getNomIndexBorsa1: "+nomIndexBorsa1);
+			return nomIndexBorsa1;
+		}
+		
+		public String getNomIndexBorsa2() {
+			System.out.println("Agent getNomIndexBorsa2: "+nomIndexBorsa2);
+			return nomIndexBorsa2;
+		}
+}

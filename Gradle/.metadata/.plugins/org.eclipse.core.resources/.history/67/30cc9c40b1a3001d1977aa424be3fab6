@@ -1,0 +1,16 @@
+package n3exercici1;
+
+public class Preus {
+	 ConvertidorDolars dolars;
+	 ConvertidorYens yens;
+	 
+	 public Preus (ConvertidorDolars dolars, ConvertidorYens yens) {
+	    this.dolars = dolars;
+	    this.yens = yens;
+	  }
+	 
+	 public void imprimir() {
+	    dolars.mostrarValor();
+	    yens.mostrarValor();
+	 }
+}

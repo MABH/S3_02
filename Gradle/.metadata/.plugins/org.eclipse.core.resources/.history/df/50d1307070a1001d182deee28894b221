@@ -1,0 +1,11 @@
+package S3_02;
+
+public class Agencia2 implements Observer{
+	@Override
+	public void actualitza(Agent agent) {
+		if (agent.getVariacio2()==1)
+			System.out.println("Agencia2 - El "+agent.getNomIndexBorsa1()+" puja");
+		else
+			System.out.println("Agencia2 - El "+agent.getNomIndexBorsa1()+" baixa");
+	}
+}
